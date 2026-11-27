@@ -1,35 +1,35 @@
 def limpiar_frase(frase: str) -> str:
-    """Elimina signos de puntuacion, convierte a minusculas y deja un solo espacio entre palabras."""
+    """Funcion que quita signos de puntuacion, pasa a minusculas y deja un espacio entre palabras."""
     signos = ".,;:!?¿¡"
-    texto_limpio = ""
-    for caracter in frase:
-        if caracter not in signos:
-            texto_limpio += caracter
-    palabras = texto_limpio.lower().split()
+    limpia = ""
+    for letra in frase:
+        if letra not in signos:
+            limpia += letra
+    palabras = limpia.lower().split()
     return " ".join(palabras)
 
 
 def contar_vocales(texto: str) -> int:
-    """Cuenta cuantas vocales (a, e, i, o, u) contiene una cadena sin distinguir mayusculas."""
+    """Funcion que acepta una cadena y devuelve cuantas vocales tiene."""
     contador = 0
-    for caracter in texto.lower():
-        if caracter in "aeiou":
+    for letra in texto.lower():
+        if letra in "aeiou":
             contador += 1
     return contador
 
 
 def vocales_por_palabra(frase: str) -> dict:
-    """Devuelve un diccionario con cada palabra limpia y su cantidad de vocales."""
+    """Funcion que devuelve un diccionario con cada palabra limpia y sus vocales."""
     frase_limpia = limpiar_frase(frase)
     palabras = frase_limpia.split()
-    resultado = dict()
+    conteo = dict()
     for palabra in palabras:
-        resultado[palabra] = contar_vocales(palabra)
-    return resultado
+        conteo[palabra] = contar_vocales(palabra)
+    return conteo
 
 
 def contar_palabras(frase: str) -> dict:
-    """Devuelve un diccionario con la frecuencia de cada palabra en minusculas."""
+    """Funcion que cuenta cuantas veces aparece cada palabra en minusculas."""
     palabras = frase.lower().split()
     conteo = dict()
     for palabra in palabras:
@@ -41,7 +41,7 @@ def contar_palabras(frase: str) -> dict:
 
 
 def agrupar_por_longitud(palabras: list) -> dict:
-    """Agrupa una lista de palabras en un diccionario segun su longitud."""
+    """Funcion que agrupa una lista de palabras en un diccionario segun su largo."""
     grupos = dict()
     for palabra in palabras:
         largo = len(palabra)

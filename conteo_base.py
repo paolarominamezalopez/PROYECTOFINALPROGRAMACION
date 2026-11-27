@@ -1,5 +1,5 @@
 def promedio_sin_extremos(numeros: list) -> float:
-    """Calcula el promedio de una lista excluyendo el valor maximo y el minimo."""
+    """Funcion que calcula el promedio de una lista quitando el numero mayor y el menor."""
     if len(numeros) < 3:
         return sum(numeros) / len(numeros)
     copia = numeros.copy()
@@ -9,7 +9,7 @@ def promedio_sin_extremos(numeros: list) -> float:
 
 
 def es_primo(n: int) -> bool:
-    """Devuelve True si n es un numero primo y False en caso contrario."""
+    """Funcion que devuelve True si el numero es primo y False si no lo es."""
     if n <= 1:
         return False
     for i in range(2, n):
@@ -19,7 +19,7 @@ def es_primo(n: int) -> bool:
 
 
 def suma_digitos(n: int) -> int:
-    """Recibe un numero entero positivo y devuelve la suma de sus digitos."""
+    """Funcion que recibe un entero positivo y devuelve la suma de sus digitos."""
     suma = 0
     for digito in str(n):
         suma += int(digito)
@@ -27,7 +27,7 @@ def suma_digitos(n: int) -> int:
 
 
 def interseccion(a: list, b: list) -> list:
-    """Devuelve los elementos que estan en ambas listas sin duplicados y en el orden de a."""
+    """Funcion que devuelve los elementos repetidos entre dos listas sin duplicados."""
     resultado = []
     for elemento in a:
         if elemento in b and elemento not in resultado:
@@ -36,7 +36,7 @@ def interseccion(a: list, b: list) -> list:
 
 
 def eliminar_duplicados(lista: list) -> list:
-    """Devuelve una nueva lista sin elementos repetidos conservando el orden original."""
+    """Funcion que devuelve una lista nueva sin elementos repetidos."""
     nueva = []
     for elemento in lista:
         if elemento not in nueva:
@@ -45,7 +45,7 @@ def eliminar_duplicados(lista: list) -> list:
 
 
 def segundo_mayor(numeros: list):
-    """Devuelve el segundo valor mas grande de la lista sin contar repetidos, o None si no existe."""
+    """Funcion que devuelve el segundo numero mas grande de la lista o None si no hay."""
     unicos = []
     for num in numeros:
         if num not in unicos:
@@ -57,7 +57,7 @@ def segundo_mayor(numeros: list):
 
 
 def aplanar(lista: list) -> list:
-    """Recibe una lista de listas y devuelve una sola lista con todos los elementos en orden."""
+    """Funcion que recibe una lista de listas y junta todos sus elementos en una sola."""
     resultado = []
     for sublista in lista:
         for elemento in sublista:
